@@ -1,8 +1,13 @@
 # tutor-app-api
-MODULOS INSTALADOS:
+<h2>MODULOS INSTALADOS:</h2>
 
--express
--babel
--nodemon
--mongoose
--dotenv
+<p>
+-express<br>
+-babel<br>
+-nodemon<br>
+-mongoose<br>
+-dotenv<br>
+-morgan<br>
+-cors<br>
+-mongoose paginate
+</p>
