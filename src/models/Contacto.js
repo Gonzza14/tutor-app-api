@@ -5,21 +5,25 @@ import { Schema, model } from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
 
 //Crea un Schema que define que datos se guardaran
-const taskSchema = new Schema(
+const contactoSchema = new Schema(
   {
-    title: {
+    contacto: {
       type: String,
       required: true,
       trim: true,
     },
-    description: {
+    telefono: {
       type: String,
       trim: true,
     },
-    done: {
-      type: Boolean,
-      default: false,
+    extension: {
+      type: String,
+      trim: true,
     },
+    correo: {
+      type: String,
+      trim: true,
+    }
   },
   {
     versionKey: false,
@@ -27,7 +31,7 @@ const taskSchema = new Schema(
   }
 );
 //Agregar plugin de paginacion
-taskSchema.plugin(mongoosePaginate);
+contactoSchema.plugin(mongoosePaginate);
 
 //Exportar funcion que devuelve un objeto con metodos para interactuar con el modelo
-export default model("Task", taskSchema);
+export default model("Contacto", contactoSchema);

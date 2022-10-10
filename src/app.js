@@ -8,7 +8,7 @@ import morgan from "morgan";
 import cors from "cors";
 
 //Importar las rutas
-import TasksRoutes from "./routes/tasks.routes";
+import ContactosRoutes from "./routes/contactos.routes";
 
 //Ejecuta el modulo y guarda el objeto que genera
 const app = express();
@@ -31,6 +31,6 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to my application" });
 });
-app.use("/api/tasks", TasksRoutes);
+app.use("/api/contactos", ContactosRoutes);
 
 export default app;

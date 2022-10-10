@@ -1,0 +1,36 @@
+###
+GET http://localhost:3000/api/contactos
+
+###
+GET http://localhost:3000/api/contactos?page=1&size=3
+
+###
+GET http://localhost:3000/api/contactos?page=0&size=3&contacto=aca
+
+###
+POST http://localhost:3000/api/contactos
+Content-Type: application/json
+
+{
+    "contacto" : "Vicerrectoría Administrativa",
+    "telefono" : "2511-2007",
+    "extension" : "2007",
+    "correo" : "ejemplo@ues.edu.sv"
+}
+
+###
+GET http://localhost:3000/api/contactos/63446628fe93624ef4494735
+
+###
+DELETE  http://localhost:3000/api/contactos/634464f1fe93624ef4494703
+
+###
+//GET  http://localhost:3000/api/contactos/done
+
+###
+PUT http://localhost:3000/api/contactos/63446479fe93624ef44946f7
+Content-Type: application/json
+
+{
+    "extension" : "2008"
+}
