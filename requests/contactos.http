@@ -12,9 +12,9 @@ POST http://localhost:3000/api/contactos
 Content-Type: application/json
 
 {
-    "contacto" : "Vicerrectoría Administrativa",
-    "telefono" : "2511-2007",
-    "extension" : "2007",
+    "contacto" : "Asamblea General Universitaria",
+    "telefono" : "2511-2022",
+    "extension" : "2022, 3023",
     "correo" : "ejemplo@ues.edu.sv"
 }
 

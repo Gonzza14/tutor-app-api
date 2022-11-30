@@ -6,5 +6,5 @@ config();
 
 //exportar un objeto con la variable de entorno
 export default {
-  mongoDBURL: process.env.MONGODB_URI || "mongodb://127.0.0.1/tutorappdb",
+  mongoDBURL: process.env.MONGODB_URI || "mongodb+srv://tutorapp:s0dom5yYNHFfIs3e@cluster0.ceuto2u.mongodb.net/tutorappdb?retryWrites=true&w=majority",
 };

@@ -7,8 +7,10 @@ import { getPagination } from "../libs/pagination";
 //Exportar funcion que busca todos los registros del modelo
 export const findAllContactos = async (req, res) => {
   try {
+    const contactos = await Contacto.find();
+    res.json(contactos);
     //Extraemos el limite, offset y titulo de la query
-    const { size, page, contacto } = req.query;
+    /*const { size, page, contacto } = req.query;
 
     //condicion para buscar por titulo
     const condition = contacto
@@ -23,11 +25,11 @@ export const findAllContactos = async (req, res) => {
     //Trae todos los datos de la coleccion y los muestra
     const data = await Contacto.paginate(condition, { offset, limit });
     res.json({
-      totalItems: data.totalDocs,
       contactos: data.docs,
+      totalItems: data.totalDocs,
       totalPages: data.totalPages,
       currentPage: data.page,
-    });
+    });*/
   } catch (error) {
     res.status(500).json({
       message: error.message || "Something goes wrong retrieving the contacts",
