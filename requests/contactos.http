@@ -22,7 +22,7 @@ Content-Type: application/json
 GET http://localhost:3000/api/contactos/63446628fe93624ef4494735
 
 ###
-DELETE  http://localhost:3000/api/contactos/634464f1fe93624ef4494703
+DELETE  http://localhost:3000/api/contactos/6386b4cb4c5ddda72ac01b41
 
 ###
 //GET  http://localhost:3000/api/contactos/done

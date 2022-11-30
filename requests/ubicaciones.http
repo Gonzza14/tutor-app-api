@@ -1,0 +1,57 @@
+###
+GET http://localhost:3000/api/ubicaciones
+
+###
+POST http://localhost:3000/api/ubicaciones
+Content-Type: application/json
+
+{
+    "nombre" : "Facultad de ingeniería y arquitectura",
+    "informacion" : "Ejemplo de texto de ingenieria y arquitectura",
+    "codigo" : "FIA",
+    "latitud" : 13.72023,
+    "longitud" : -89.20146,
+    "tipo" : "Facultad",
+    "facultad" :"Facultad de ingeniería y arquitectura",
+    "imagenes" : [
+        {
+            "imagen" : "app/src/main/res/drawable/fia_img_uno.jpg",
+            "descripcion" : "Edificio principal de la FIA"
+        },
+        {
+            "imagen" : "app/src/main/res/drawable/fia_img_dos.jpg",
+            "descripcion" : "Biblioteca de la FIA"
+        },
+        {
+            "imagen" : "app/src/main/res/drawable/fia_img_tres.jpg",
+            "descripcion" : "Escuela de Ingenieria y sistemas"
+        }
+    ]
+}
+
+###
+DELETE  http://localhost:3000/api/ubicaciones/6387e68907ac81ef20e6924c
+
+###
+GET http://localhost:3000/api/ubicaciones/6387e69f07ac81ef20e6924f
+
+###
+PUT http://localhost:3000/api/ubicaciones/6387e69f07ac81ef20e6924f
+Content-Type: application/json
+
+{
+     "imagenes" : [
+        {
+            "imagen" : "app/src/main/res/drawable/fia_img_uno.jpg",
+            "descripcion" : "Edificio principal de la FIA"
+        },
+        {
+            "imagen" : "app/src/main/res/drawable/fia_img_dos.jpg",
+            "descripcion" : "Biblioteca de la FIA"
+        },
+        {
+            "imagen" : "app/src/main/res/drawable/fia_img_tres.jpg",
+            "descripcion" : "Escuela de Ingenieria y sistemas"
+        }
+    ]
+}

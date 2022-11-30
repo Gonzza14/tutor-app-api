@@ -10,19 +10,19 @@ const router = Router()
 //rutas
 router.get('/', contactoController.findAllContactos)
 
-//crear tarea
+//crear contacto
 router.post('/', contactoController.createContacto);
 
 //tareas hechas
 //router.get('/done', contactoController.findAllDoneTasks)
 
-//Buscar una tarea por id
+//Buscar un contacto por id
 router.get('/:id', contactoController.findOneContacto) 
 
-//borrar tarea
+//borrar contacto
 router.delete('/:id', contactoController.deleteContacto)
 
-//actualizar tarea
+//actualizar contacto
 router.put('/:id', contactoController.updateContacto)
 
 //exportar

@@ -2,7 +2,7 @@
 import Contacto from "../models/Contacto";
 
 //importar configuracion de paginacion
-import { getPagination } from "../libs/pagination";
+//import { getPagination } from "../libs/pagination";
 
 //Exportar funcion que busca todos los registros del modelo
 export const findAllContactos = async (req, res) => {
@@ -32,7 +32,7 @@ export const findAllContactos = async (req, res) => {
     });*/
   } catch (error) {
     res.status(500).json({
-      message: error.message || "Something goes wrong retrieving the contacts",
+      message: error.message || "Algo salió mal al recuperar los contactos",
     });
   }
 };
@@ -41,7 +41,7 @@ export const findAllContactos = async (req, res) => {
 export const createContacto = async (req, res) => {
   //validamos si no se recibe el titulo
   if (!req.body.contacto || !req.body.telefono) {
-    return res.status(400).send({ message: "Content cannot be empty" });
+    return res.status(400).send({ message: "Existe contenido vacío" });
   }
   //Crear contacto
   try {
@@ -60,7 +60,7 @@ export const createContacto = async (req, res) => {
     res.json(contactoSaved);
   } catch (error) {
     res.status(500).json({
-      message: error.message || "Something goes wrong creating a contacts",
+      message: error.message || "Algo salió mal al crear el contacto",
     });
   }
 };
@@ -73,16 +73,16 @@ export const findOneContacto = async (req, res) => {
     //Buscar por id
     const contacto = await Contacto.findById(id);
 
-    //Validacion si la tarea no existe
+    //Validacion si el contacto no existe
     if (!contacto)
       return res
         .status(404)
-        .json({ message: `Contact with id ${id} does not exists` });
+        .json({ message: `El contacto con el identificador ${id} no existe` });
     //mostrar tarea
     res.json(contacto);
   } catch (error) {
     res.status(500).json({
-      message: error.message || `Error Retriving contact with id: ${id}`,
+      message: error.message || `Error al recuperar el contacto con el identificador: ${id}`,
     });
   }
 };
@@ -96,11 +96,11 @@ export const deleteContacto= async (req, res) => {
     const data = await Contacto.findByIdAndDelete(id);
     //Mostrar un objeto
     res.json({
-      message: `${data.contacto} contact were deleted succesfully`,
+      message: `El contacto ${data.contacto} ha sido eliminado con exito`,
     });
   } catch (error) {
     res.status(500).json({
-      message: error.message || `Cannot delete contact with id: ${id}`,
+      message: error.message || `No se puede eliminar el contacto con el identificador: ${id}`,
     });
   }
 };
@@ -130,12 +130,12 @@ export const updateContacto = async (req, res) => {
     if (!updatedContacto)
       return res
         .status(404)
-        .json({ message: `Contact with id ${id} does not exists` });
+        .json({ message: `El contacto con el identificador ${id} no existe` });
 
-    res.json({ message: "Contact was updated succesfully" });
+    res.json({ message: "El contacto ha sido actualizada con exito" });
   } catch (error) {
     res.status(500).json({
-      message: error.message || "Something goes wrong updating a Contact",
+      message: error.message || "Algo salió mal al actualizar el contacto",
     });
   }
 };
