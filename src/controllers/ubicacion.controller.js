@@ -105,4 +105,49 @@ export const updateUbicacion = async (req, res) => {
       });
     }
   };
+
+  export const busquedaUbicacion = async (req, res) => {
+    //Extraemos la ubicacion buscada de los parametros
+    const busqueda = req.params
+    try{
+      //Definimos los datos a obtener
+      const datos = {nombre: 1, latitud: 1, longitud: 1}
+      //Busqueda por nombre
+      const ubicacion = await Ubicacion.findOne(busqueda, datos)
+
+      //Validacion si la ubicacion no existe
+      if(!ubicacion){
+        return res
+        .status(404)
+        .json({ message: `La ubicación con el nombre especifico de ${busqueda.nombre} no existe` })
+      }
+      res.json(ubicacion)
+    }catch(error){
+      res.status(500).json({
+        message: error.message || `Error al recuperar la ubicación con el nombre de: ${busqueda.nombre}`,
+      });
+    }
+  }
+
+  export const filtroUbicacion = async (req, res) =>{
+    //Extraemos la ubicacion buscada de los parametros
+    const busqueda = {nombre: new RegExp(req.params.nombre, 'i')}
+    try{
+      //Definimos los datoa a obtener
+      const datos = {nombre: 1, tipo: 1, codigo: 1, imagenes: 1}
+      //Filtrado por nombre
+      const ubicaciones = await Ubicacion.find(busqueda, datos)
+       //Validacion si la ubicacion no existe
+       if(!ubicaciones){
+        return res
+        .status(404)
+        .json({ message: `La ubicación no existe` })
+      }
+      res.json(ubicaciones)
+    }catch(error){
+      res.status(500).json({
+        message: error.message || `Error al recuperar la ubicación`,
+      });
+    }
+  }
   
