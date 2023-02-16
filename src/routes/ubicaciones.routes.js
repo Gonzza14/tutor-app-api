@@ -22,5 +22,11 @@ router.delete('/:id', ubicacionController.deleteUbicacion)
 //actualizar ubicacion
 router.put('/:id', ubicacionController.updateUbicacion)
 
+//Busqueda de ubicacion por nombre
+router.get('/busqueda/:nombre', ubicacionController.busquedaUbicacion)
+
+//Filtrado de ubicacion por nombre
+router.get('/filtrado/:nombre', ubicacionController.filtroUbicacion)
+
 //exportar
 export default router;

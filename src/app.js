@@ -10,6 +10,7 @@ import cors from "cors";
 //Importar las rutas
 import ContactosRoutes from "./routes/contactos.routes";
 import UbicacionesRoutes from "./routes/ubicaciones.routes";
+import DireccionesRoutes from "./routes/direcciones.routes";
 
 //Ejecuta el modulo y guarda el objeto que genera
 const app = express();
@@ -34,5 +35,6 @@ app.get("/", (req, res) => {
 });
 app.use("/api/contactos", ContactosRoutes);
 app.use("/api/ubicaciones", UbicacionesRoutes);
+app.use("/api/direcciones", DireccionesRoutes);
 
 export default app;
